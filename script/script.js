@@ -1,33 +1,16 @@
 'use strict';
 
-let lang = 'ru';
-let arr;
+function checkType(data){
+    if (typeof data != 'string'){
+        document.write('Это не строка');
+    } else if (data.length > 30){
+        data.slice(0, -1);
+        data + '...';
+       return data.slice(0, 30).trim() + '...';
+        return data.trim();
+    } else {
+        return data.trim();
+    }
 
-if (lang == 'ru') {
-     arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 }
-if (lang == 'en') {
-    arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
-}
-console.log(arr);
-
-switch (lang) {
-    case 'ru':
-     arr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-    break;
-    case 'en':
-        arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
-    break;
-}
-console.log(arr);
-
- arr = {
-	'ru':['пн', 'вт', 'ср','чт', 'пт', 'сб', 'вс'],
-	'en':['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
-};
-console.log(arr[lang]);
-
-let namePerson;
-
-namePerson === 'Артем' ? console.log('директор') : console.log('студент');
-namePerson === 'Максим' ? console.log('преподаватель') : console.log('студент');
+console.log(checkType(' 0123456789101112131415161718192021222324252627282930'));
