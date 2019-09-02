@@ -1,17 +1,14 @@
 'use strict';
 
-let arr = ['245', '5678', '458', '355', '325', '789', '4905'];
+let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 
- arr.forEach((e) => {
-   if (e[0] == '2' || e[0] == '4') {
-    console.log(e);
+for (let i = 0; i < 7; i++) {
+   if (week[i] == 'сб' || week[i] == 'вс') {
+     document.write(`<i>${week[i]}</i><br>`);
+   } else if (week[i] == 'пн') {
+    document.write(`<b>${week[i]}</b><br>`);
+   } else {
+     document.write(`${week[i]}<br>`);
    }
- });
-
-
-Function: for ( let i = 2; i <= 100; i++){
-    for (let n = 2; n < i; n++) {
-        if (i % n == 0) continue Function;
-    }
-    console.log(i + ' Делители этого числа: 1 и ' + i)
-}
+ }
+console.log(week);
