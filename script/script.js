@@ -1,14 +1,37 @@
 'use strict';
 
-let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+let input = document.querySelector('input');
 
-for (let i = 0; i < 7; i++) {
-   if (week[i] == 'сб' || week[i] == 'вс') {
-     document.write(`<i>${week[i]}</i><br>`);
-   } else if (week[i] == 'пн') {
-    document.write(`<b>${week[i]}</b><br>`);
-   } else {
-     document.write(`${week[i]}<br>`);
-   }
- }
-console.log(week);
+function DomElement(selector, height, width, bg, fontSize){
+    this.selector = selector;
+    this.style.height = height; 
+    this.width = width;
+    this.bg = bg;
+    this.fontSize = fontSize;
+    this.create = function(){
+        if(input.value.split('')[0] === '.'){
+            let newDiv = document.createElement("div");
+            document.querySelector('body').appendChild(newDiv);
+            newDiv.textContent = input.value;
+            let newDivClass = input.value.split('');
+            newDivClass.shift();
+            newDiv.className = newDivClass.join('');
+        }else if(input.value.split('')[0] === '#'){
+            let newParag = document.createElement("p");
+            document.querySelector('body').appendChild(newParag);
+            newParag.textContent = input.value;
+        }
+       
+    }
+}
+
+DomElement.prototype.create = function(){
+    console.log('alert')
+}
+
+let dom = new DomElement(input, '35px', '100%', '#202020', '14px');
+document.querySelector('body').addEventListener('click', function(){
+    dom.create();  
+})
+console.log(dom);
+
