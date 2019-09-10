@@ -25,13 +25,7 @@ function DomElement(selector, height, width, bg, fontSize){
     }
 }
 
-DomElement.prototype.create = function(){
-    console.log('alert')
-}
-
 let dom = new DomElement(input, '35px', '100%', '#202020', '14px');
 document.querySelector('body').addEventListener('click', function(){
     dom.create();  
 })
-
-
