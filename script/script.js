@@ -4,7 +4,7 @@ let input = document.querySelector('input');
 
 function DomElement(selector, height, width, bg, fontSize){
     this.selector = selector;
-    this.style.height = height; 
+    this.height = height; 
     this.width = width;
     this.bg = bg;
     this.fontSize = fontSize;
@@ -33,5 +33,5 @@ let dom = new DomElement(input, '35px', '100%', '#202020', '14px');
 document.querySelector('body').addEventListener('click', function(){
     dom.create();  
 })
-console.log(dom);
+
 
